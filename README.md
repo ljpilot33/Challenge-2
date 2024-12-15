@@ -158,100 +158,120 @@ quantity = input(f"What quantity of {item_name} would you like? (This will defau
 
                     # Check if the quantity is a number
 if not quantity.isdigit():
-    quantity = 1  # Default to 1 if the input is not a valid number
+                    # Check if the quantity is a number, default to 1 if not
+    quantity = 1    # Default to 1 if the input is not a valid number
 else:
     quantity = int(quantity)  # Convert the input to an integer
 
-
-                    # Check if the quantity is a number, default to 1 if not
-
-
                     # Add the item name, price, and quantity to the order list
+# Initialize the order list
+order_list = []
 
+# Assume you have the following variables after getting user input
+item_name = "Example Item"  # Replace with the actual item name
+item_price = 5.99           # Replace with the actual item price
+quantity = 2                # Replace with the actual quantity
 
-                    # Tell the customer that their input isn't valid
+# Create a dictionary for the order item
+order_item = {
+    "Item name": item_name,
+    "Price": item_price,
+    "Quantity": quantity
+}
+# Append the order item to the order list
+order_list.append(order_item)
 
+# Now, order_list contains the item details
+print(order_list)
 
-                # Tell the customer they didn't select a menu option
-
-
-                    
-                    # Proceed with the order process
-                item_name = menu_items[menu_selection]["Item name"]
-                print(f"You selected {item_name}.")
+# Check if the menu selection is in the menu items
+menu_selection  
+if menu_selection in menu_items.keys():
+        # Proceed with the order process
+        item_name = menu_items[menu_selection]["Item name"]
+        print(f"You selected {item_name}.")
 else:
-                # Tell the customer that their input isn't valid
-                print("Sorry, that number isn't an option.")
-                
-                
+        # Tell the customer that their input isn't valid
+        print("Sorry, that number isn't an option.")
 
-    
-   
-   
+        # Tell the customer they didn't select a menu option
+print(f"{menu_category} was not a menu option.")
 
-## If the input is valid, you can proceed with the ordering process; otherwise, you inform the customer that their selection is invalid.
-           
-
-                # Convert the menu selection to an integer
-
-
-                # 4. Check if the menu selection is in the menu items
-
-                    # Store the item name as a variable
+# Tell the customer they didn't select a number
+print("You didn't select a number.")
+                   
+# Proceed with the order process
+item_name = menu_items[menu_selection]["Item name"]
+print(f"You selected {item_name}.")
 
 
-                    # Ask the customer for the quantity of the menu item
+# In this code:
 
+# If the customer inputs 'y', the order process continues.
+# If they input 'n', the order process stops, and a thank you message is displayed.
+# If the input is anything else, the customer is prompted to try again.
 
-                    # Check if the quantity is a number, default to 1 if not
-
-
-                    # Add the item name, price, and quantity to the order list
-
-
-                    # Tell the customer that their input isn't valid
-
-
-                # Tell the customer they didn't select a menu option
-
-        else:
-            # Tell the customer they didn't select a menu option
-            print(f"{menu_category} was not a menu option.")
-    else:
-        # Tell the customer they didn't select a number
-        print("You didn't select a number.")
-
-    while True:
+while True:
         # Ask the customer if they would like to order anything else
         keep_ordering = input("Would you like to keep ordering? (Y)es or (N)o ")
 
         # 5. Check the customer's input
-
+        match keep_ordering.lower():
+            case "y":
                 # Keep ordering
-
+                place_order = True
+                break  # Exit the keep ordering question loop
+            case "n":
                 # Exit the keep ordering question loop
 
                 # Complete the order
-
-                # Since the customer decided to stop ordering, thank them for
-                # their order
-
-                # Exit the keep ordering question loop
-
-
+                place_order = False
+                print("Thank you for your order.")
+                break  # Exit the keep ordering question loop
+            case _:
                 # Tell the customer to try again
+                print("I didn't understand your response. Please try again.")
+                
+                # Since the customer decided to stop ordering, thank them for their order.
+                print("Thank you for your order.")
+                break    # Exit the keep ordering question loop
+                
+                # Tell the customer to try again
+                print("I didn't understand your response. Please try again.")
 
 
 # Print out the customer's order
 print("This is what we are preparing for you.\n")
+order = []
+for item in order_list:
+    order +print(f"{item['Item name']} | ${item['Price']} | {item['Quantity']}")
+print("\n".join(order))
 
-# Uncomment the following line to check the structure of the order
-#print(order)
-
+print(order_list)
+      
 print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
 # 6. Loop through the items in the customer's order
+# Assuming 'order' is your list of dictionaries
+for i in range(len(order)):
+    # Store the dictionary items as variables
+    item_name = order[i]["Item name"]
+    price = order[i]["Price"]
+    quantity = order[i]["Quantity"]
+
+    # You can now use these variables to print or process the order items
+    print(f"Item: {item_name}, Price: ${price}, Quantity: {quantity}")
+
+# Alternatively, you can loop through the list directly without using the index:
+
+for item in order:
+    item_name = item["Item name"]
+    price = item["Price"]
+    quantity = item["Quantity"]
+    
+    print(f"Item: {item_name}, Price: ${price}, Quantity: {quantity}")
+# Both methods will allow you to access and work with each item in the customer's order.
 
     # 7. Store the dictionary items as variables
 
