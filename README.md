@@ -1,5 +1,5 @@
 # Challenge-2
-printing the menu for the customer
+# printing the menu for the customer
 
 # Menu dictionary
 menu = {
@@ -55,7 +55,7 @@ menu = {
 
 # 1. Set up order list. Order list will store a list of dictionaries for
 # menu item name, item price, and quantity ordered
-Variable_name
+
 
 # Launch the store and present a greeting to the customer
 print("Welcome to the variety food truck.")
@@ -91,7 +91,7 @@ while place_order:
             # Save the menu category name to a variable
             menu_category_name = menu_items[int(menu_category)]
             # Print out the menu category name they selected
-            print(f"You selected {menu_category_name}")
+            print(f"You seleted {menu_category_name}")
 
             # Print out the menu options from the menu_category_name
             print(f"What {menu_category_name} item would you like to order?")
@@ -121,9 +121,76 @@ while place_order:
                     }
                     i += 1
             # 2. Ask customer to input menu item number
+            menu_selection = input("Type menu number: ")
 
+# Assuming menu_items is a dictionary containing the menu items and their corresponding numbers
+menu_selection = input("Type menu number: ")
 
             # 3. Check if the customer typed a number
+if menu_selection.isdigit():
+                menu_selection = int(menu_selection)     
+            # The isdigit() method checks if the input is a number.
+                # If it is not an integer, we convert it to an integer and 
+                # check if it exists in the menu_items dictionary. 
+                
+                # Convert the input to an integer
+                menu_selection = int(menu_selection)
+                            
+            # 4. Check if the menu selection is in the menu items
+                if menu_selection in menu_items.keys():
+ 
+ 
+ 
+ 
+ # Proceed with the order process
+                    item_name = menu_items[menu_selection]["Item name"]
+                    print(f"You selected {item_name}.")
+                else:
+                # Tell the customer that their input isn't valid
+                    print("Sorry, that number isn't an option.")
+                
+                # Store the item name as a variable
+                    item_name = input("Enter the name of the item you want to purchase: ")                    
+
+                    # Assuming you have the item name stored in a variable called item_name
+                    # Ask the customer for the quantity of the menu item                  
+quantity = input(f"What quantity of {item_name} would you like? (This will default to 1 if not entered) ")
+
+                    # Check if the quantity is a number
+if not quantity.isdigit():
+    quantity = 1  # Default to 1 if the input is not a valid number
+else:
+    quantity = int(quantity)  # Convert the input to an integer
+
+
+                    # Check if the quantity is a number, default to 1 if not
+
+
+                    # Add the item name, price, and quantity to the order list
+
+
+                    # Tell the customer that their input isn't valid
+
+
+                # Tell the customer they didn't select a menu option
+
+
+                    
+                    # Proceed with the order process
+                item_name = menu_items[menu_selection]["Item name"]
+                print(f"You selected {item_name}.")
+else:
+                # Tell the customer that their input isn't valid
+                print("Sorry, that number isn't an option.")
+                
+                
+
+    
+   
+   
+
+## If the input is valid, you can proceed with the ordering process; otherwise, you inform the customer that their selection is invalid.
+           
 
                 # Convert the menu selection to an integer
 
