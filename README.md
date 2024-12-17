@@ -72,15 +72,18 @@ menu = {
 order = []  # Initialize an empty list
 
 # 2. Create a function to print the menu for the customer
+
 item_order = {
     "Item name": "Apple",
     "Price": 0.49,
     "Quantity": 2
 }
 # Step 3: Append the dictionary to the order list
+
 order.append(item_order)
 
 # You can add more items similarly
+
 item_order2 = {
     "Item name": "Banana",
     "Price": 0.69,
