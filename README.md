@@ -159,9 +159,12 @@ for key in menu.keys():
         menu_items[i] = key
         # Add 1 to the menu item number
         i += 1
+
 # Print the options to choose from menu headings (all the first level
 # dictionary items in menu).
+
 i = 1
+
 # Print the options to choose from menu headings
 print("Please choose a menu category:")
 
@@ -170,6 +173,7 @@ for key in menu.keys():
         i += 1
 
 # Create a dictionary to store the menu for later retrieval 
+
 for key in menu.keys():
     print(f"{i}: {key}")
     # Store the menu category associated with its menu item number
@@ -177,12 +181,9 @@ for key in menu.keys():
     # Add 1 to the menu item number
     i += 1
 
-
-
-
-
 # Print the options to choose from menu headings (all the first level
 # dictionary items in menu).
+
 menu_items = {}
 i = 1
 print("Please choose a menu category:")
